@@ -1,4 +1,5 @@
 """Utility module for handling the generation of test data."""
+
 import numpy as np
 import pandas as pd
 import scipy.stats
@@ -29,7 +30,9 @@ def generate_test_df(mean_rt, sd_rt, mean_accuracy, n=100):
     accuracy_continuous = np.random.rand(n)
     accuracy = pd.Series(
         accuracy_continuous
-        < scipy.stats.scoreatpercentile(accuracy_continuous, 100 * mean_accuracy)
+        < scipy.stats.scoreatpercentile(
+            accuracy_continuous, 100 * mean_accuracy
+        )
     )
 
     # scale the correct RTs only
@@ -39,7 +42,9 @@ def generate_test_df(mean_rt, sd_rt, mean_accuracy, n=100):
     # NB: .where() replaces values where the condition is False
     rt_scaled_with_inaccurate_rts = rt_scaled.where(accuracy, rt)
 
-    return pd.DataFrame({"rt": rt_scaled_with_inaccurate_rts, "accuracy": accuracy})
+    return pd.DataFrame(
+        {"rt": rt_scaled_with_inaccurate_rts, "accuracy": accuracy}
+    )
 
 
 def scale_values(values, mean, sd):
