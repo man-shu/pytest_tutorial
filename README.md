@@ -1,6 +1,6 @@
 # A basic pytest tutorial for data science
 
-![Python application](https://github.com/poldrack/pytest_tutorial/workflows/Python%20application/badge.svg)
+[![Python application](https://github.com/man-shu/pytest_tutorial/actions/workflows/python-app.yml/badge.svg)](https://github.com/man-shu/pytest_tutorial/actions/workflows/python-app.yml)
 
 Researchers often wish to know how to implement software testing for data science applications. This tutorial provides an example of how to get started with software testing in the context of data science, using the [`pytest`](https://docs.pytest.org/en/7.1.x/) library for Python.
 
