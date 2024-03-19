@@ -16,3 +16,4 @@ __pycache__/
 
 # Local solutions directory
 solutions
+rtanalysis/*,cover
