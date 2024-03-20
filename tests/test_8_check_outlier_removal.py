@@ -16,9 +16,6 @@ def test_outlier_removal(outlier_cutoff_sd):
     cutoff = test_df.rt.std() * outlier_cutoff_sd
 
     # we are testing pretty high cutoffs, so it should not remove all RTs
-    if rt_masked.shape[0] == 0:
-        raise ValueError(
-            f"outlier reject excluded all trials at {outlier_cutoff_sd} cutoff "
-        )
-    else:
-        assert (rt_masked <= cutoff).all()
+    assert rt_masked.shape[0] != 0
+    # check if all remaining RTs are under the cutoff
+    assert (rt_masked <= cutoff).all()
