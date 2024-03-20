@@ -24,7 +24,7 @@ def generate_test_df(mean_rt, sd_rt, mean_accuracy, n=100):
     pd.DataFrame
         Generated mock data
     """
-    rt = pd.Series(scipy.stats.weibull_min.rvs(2, loc=1, size=n))
+    rt = pd.Series(scipy.stats.lognorm.rvs(s=2, loc=1, size=n))
 
     # get random accuracy values and threshold for intended proportion
     accuracy_continuous = np.random.rand(n)

@@ -13,7 +13,7 @@ from rtanalysis.rtanalysis import RTAnalysis
 
 @pytest.mark.parametrize(
     "meanRT, sdRT, meanAcc",
-    [(1.5, 0.7, 0.9), (1500, 700, 0.9), (1.5, 1.0, 0)],
+    [(1.5, 1.0, 0.9), (1500, 1000, 0.9), (1.5, 1.0, 0)],
 )
 def test_rtanalysis_parameteric(meanRT, sdRT, meanAcc):
     test_df = generate_test_df(meanRT, sdRT, meanAcc)
